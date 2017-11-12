@@ -1,0 +1,53 @@
+﻿@model IEnumerable<asp_net_homework_1.ViewModels.ClientAccountVM>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/layout1.cshtml";
+}
+
+<h2>@Html.Raw(ViewBag.AccountType) Accounts Summary</h2>
+
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.accountNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.accountType)
+        </th>        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.ActionLink("Detail", "Detail", new
+                                {
+                                   controller = "Home",
+                                   clientId = item.clientID,
+                                   accountNum = item.accountNum
+                                })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.accountNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstName)
+        </td>    
+        <td>
+            @Html.DisplayFor(modelItem => item.accountType)
+        </td>               
+    </tr>
+}
+
+</table>

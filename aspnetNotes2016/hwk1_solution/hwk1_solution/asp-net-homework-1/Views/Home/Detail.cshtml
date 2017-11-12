@@ -1,0 +1,62 @@
+﻿@model asp_net_homework_1.ViewModels.ClientAccountVM
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/layout1.cshtml";
+}
+
+<h2>Account Detail</h2>
+
+<div>
+    <hr />
+    <table>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.clientID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.firstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.accountNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.accountType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.balance)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new
+                       {
+                           clientId = Model.clientID,
+                           accountNum = Model.accountNum
+                       })
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.clientID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.lastName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.accountNum)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.accountType)
+            </td>
+            <td>
+                @Html.Raw(Model.balance.ToString("C"))
+            </td>
+        </tr>
+    </table>
+</div>

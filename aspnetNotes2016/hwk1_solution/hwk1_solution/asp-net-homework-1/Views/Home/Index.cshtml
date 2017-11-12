@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/layout1.cshtml";
+}
+
+<h2>Welcome!</h2>
+@using (Html.BeginForm("List", "Home", FormMethod.Get))
+{   
+    <label for="accountType">Select Account Type:</label>
+    <select id="accountType" name="accountType">
+        <option value="All">All</option>
+        <option value="Chequing">Chequing</option>
+        <option value="Savings">Savings</option>
+    </select>
+    <input type="submit" value="Submit" /><br /><br />
+}
+
+
+
+
+
+

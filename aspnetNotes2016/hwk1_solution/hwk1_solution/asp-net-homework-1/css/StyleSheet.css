@@ -1,0 +1,33 @@
+﻿body {
+    font-family: Georgia, Arial, sans-serif;
+}
+table {
+    border-collapse: collapse;
+    color: darkslategray;
+}
+table th {
+    background-color: darkgrey;
+    border: solid 1px darkgrey; 
+    padding: 5px;       
+}
+table td {
+    border: solid 1px darkgrey;
+    padding: 5px;
+}
+.form-group {
+    overflow: hidden;
+}
+.form-group label {
+    font-weight: bold;
+    margin: 5px;
+}
+.form-group div {
+    margin: 5px;
+}
+header {
+    text-align: center;
+}
+img {    
+    width: 15%;
+    margin: 20px 0 0 0;
+}

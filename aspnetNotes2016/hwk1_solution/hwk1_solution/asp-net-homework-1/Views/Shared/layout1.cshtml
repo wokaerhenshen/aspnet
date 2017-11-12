@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ASP.NET HomeWork 1</title>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</head>
+<body>
+    <header>
+        <img src="~/Images/bank-logo.png" alt="Bank Logo" width="200" />
+    </header>
+    <main>
+        <h1>ASP.NET HomeWork 1</h1>
+        <hr />
+        @Html.ActionLink("Home", "Index")
+        @RenderBody()
+    </main>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Be sure to add an entity data model to reference the VolunteerScheduler database and add some rows for Volunteers to it.

@@ -1,0 +1,91 @@
+﻿@model asp_net_homework_1.ViewModels.ClientAccountVM
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/layout1.cshtml";
+}
+
+<h2>Account Update</h2>
+
+@using (Html.BeginForm())
+
+{
+    @Html.HiddenFor(model => model.accountType)
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <!--Client Id-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.clientID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.clientID)
+                @*@Html.EditorFor(model => model.clientID, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                @Html.ValidationMessageFor(model => model.clientID, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <!--Last Name-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.lastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.lastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.lastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!--First Name-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.firstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.firstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.firstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!--Account Number-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.accountNum, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.accountNum)
+                @*@Html.EditorFor(model => model.accountNum, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                @Html.ValidationMessageFor(model => model.accountNum, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <!--Account Type-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.accountType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.accountType)
+                @*@Html.EditorFor(model => model.accountType, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                @Html.ValidationMessageFor(model => model.accountType, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <!--Balance-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.balance, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.balance, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.balance, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

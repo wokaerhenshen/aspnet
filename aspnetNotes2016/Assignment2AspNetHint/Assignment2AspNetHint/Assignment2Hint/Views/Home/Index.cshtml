@@ -1,0 +1,66 @@
+﻿@model Assignment2Hint.ViewModels.TaskAssignmentListVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+    
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>TaskAssignmentListVM</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <table class="table">
+                        @{
+                            var counter = 0;
+                        }
+                        @foreach (var schedule in ViewBag.Schedules) {
+                            <tr>
+                                <td>
+                                    <!-- This code is sort of broken but hopefully you can see 
+                                        how to get the collection info you need. You will
+                                        need to fix the indexing mechanism -->
+                                    <select name="taskAssignmentVM[@counter].volunteerID">
+                                        <option value="null"></option>
+                                        @foreach (var item in ViewBag.Volunteers) {
+                                            <option value="@item.volunteerID">@item.firstName</option>
+                                        }
+                                    </select>
+                                </td>
+                                <td>
+                                    @Html.Raw(schedule.monthAssigned)
+                                    <input type="hidden" name="taskAssignmentVM[@counter].monthAssigned" 
+                                           value="@schedule.monthAssigned"/>
+                                </td>
+                            </tr>
+                            counter++;
+                        }
+                    </table>
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>
