@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Index</title>
+</head>
+<body >
+    <div>
+        <h1>
+            @{
+                @Html.Raw("Welcome")
+                if (ViewBag.UserName != null)
+                {
+                    @Html.Raw(" " + ViewBag.UserName)
+                }
+                @Html.Raw("!")
+            }
+        </h1>
+        @using (Html.BeginForm("SetUser",       // Action
+                                   "Home",            // Controller
+                                   FormMethod.Post))  // Method type
+        {
+            @Html.Raw("Name: ")
+            <input type="text" name="txtName" />
+            <input type="submit" value="Submit" />
+        }
+        @Html.ActionLink("Clear",                 // Text
+                         "ClearCookie",           // Method
+                         "Home")
+
+
+
+
+
+
+        <h1>
+            @{
+                @Html.Raw("Welcome")
+                if (ViewBag.UserName != null)
+                {
+                    @Html.Raw(" " + ViewBag.Color)
+
+                }
+                @Html.Raw("!")
+            }
+        </h1>
+
+
+
+        @using (Html.BeginForm("SetColor",       // Action
+                                       "Home",            // Controller
+                                       FormMethod.Post))  // Method type
+        {
+            @Html.Raw("Color: ")
+            <input type="text" name="color" />
+            <input type="submit" value="Submit" />
+        }
+        @Html.ActionLink("Clear",                 // Text
+                         "ClearCookieColor",           // Method
+                         "Home")
+
+
+        @Html.ActionLink("JsSHOW!","jsShowCookie","Home")
+
+    </div>
+    <style type="text/css">
+        body{
+            background-color: @ViewBag.Color
+        }
+    </style>
+
+</body>
+</html>

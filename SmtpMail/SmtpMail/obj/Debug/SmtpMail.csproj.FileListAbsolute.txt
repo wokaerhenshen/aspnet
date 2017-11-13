@@ -1,0 +1,6 @@
+c:\users\karl\documents\visual studio 2017\Projects\SmtpMail\SmtpMail\bin\Debug\SmtpMail.exe.config
+c:\users\karl\documents\visual studio 2017\Projects\SmtpMail\SmtpMail\bin\Debug\SmtpMail.exe
+c:\users\karl\documents\visual studio 2017\Projects\SmtpMail\SmtpMail\bin\Debug\SmtpMail.pdb
+c:\users\karl\documents\visual studio 2017\Projects\SmtpMail\SmtpMail\obj\Debug\SmtpMail.csprojResolveAssemblyReference.cache
+c:\users\karl\documents\visual studio 2017\Projects\SmtpMail\SmtpMail\obj\Debug\SmtpMail.exe
+c:\users\karl\documents\visual studio 2017\Projects\SmtpMail\SmtpMail\obj\Debug\SmtpMail.pdb

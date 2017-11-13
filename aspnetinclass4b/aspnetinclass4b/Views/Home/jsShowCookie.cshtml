@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "jsShowCookie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>jsShowCookie</title>
+
+</head>
+<body>
+    <div> 
+        hello  guys
+        <p>Here is the UserName:<span id="user"></span></p>
+        <p>Here is the colorName:<span id="color"></span></p>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+        function getCookie(cookieName) {
+        var name = cookieName + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+             var c = ca[i];
+             while (c.charAt(0)==' ') c = c.substring(1);
+             if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+  }
+        return "";
+        }
+
+        document.getElementById("user").innerHTML = getCookie("UserName");
+        document.getElementById("color").innerHTML = getCookie("Color");
+    </script>
+</body>
+</html>
