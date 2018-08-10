@@ -1,0 +1,5 @@
+一：
+在NuGet Package 中，如果你不说明要下什么version的，默认会给你下最新的version的
+但是如果你在.net 2.0 中下了 2.1.x 的package 你肯定会报错
+正确的解决方式是： 在下载Nuget package时候，你需要在后面加上 --Version 2.x.x，其中的x是你.net的版本
+这个错误很重要，如果错了根本无法继续做下去。
